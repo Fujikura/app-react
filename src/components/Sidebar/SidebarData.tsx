@@ -7,30 +7,38 @@ import { FiSettings } from 'react-icons/fi'
 const SidebarData = [
 	{
 		label: 'Dashboard',
-		path: 'dashboard',
+		path: '/dashboard',
 		icon: <AiFillDashboard />
 	},
 	{
 		label: 'Transacões',
+		path: '',
 		icon: <RiMoneyDollarCircleLine />,
 		subitems: [
 			{
 				label: 'Entradas',
-				path: 'entradas'
+				path: '/entradas'
 			},
 			{
 				label: 'Saídas',
-				path: 'saidas'
+				path: '/saidas'
 			}
 		]
 	},
 	
 	{
 		label: 'Configurações',
+		path: '',
 		icon: <FiSettings />,
 		subitems: [
-			{ label: 'Usuarios' },
-			{ label: 'Definir cor padrão' }
+			{ 
+				label: 'Usuarios',
+				path: '/'
+			},
+			{ 
+				label: 'Definir cor padrão',
+				path: '/'
+			}
 		]
 	}
 ]

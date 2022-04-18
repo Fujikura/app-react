@@ -1,17 +1,17 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React from 'react'
 import * as S from './styles'
 
 interface IHeaderProps{
-	handleCloseSidebar: () => void;
+	handleShowMenu: () => void;
 }
 
 const Header: React.FC<IHeaderProps> = (props) =>{
-	const { handleCloseSidebar } = props;
+	const { handleShowMenu } = props;
 	
 	return(
 		<S.Header>
 		<div>
-			<S.HeaderButtonToggle onClick={handleCloseSidebar}/>
+			<S.HeaderButtonToggle onClick={handleShowMenu}/>
 		</div>
 		</S.Header>
 		)

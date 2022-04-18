@@ -1,10 +1,15 @@
 
 import React from 'react'
 
+import { Title } from '../../components/Title'
+
+import * as S from './styles'
+
 const Dashboard = () => {
 	return(
-		<h1>Dashboard</h1>
+		<S.Container>
+			<Title>Dashboard</Title>
+		</S.Container>
 		)
-	
 }
 export { Dashboard }

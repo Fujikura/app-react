@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom'
-import { Routers } from './Routes'
-import './App.css';
-import { GlobalStyles } from './styles/GlobalStyles'
-import { Header } from './components/Header'
-import { Sidebar } from './components/Sidebar'
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import { Header } from "./components/Header";
+import { Sidebar } from "./components/Sidebar";
+import { Content } from "./components/Content";
+
+import { GlobalStyles } from "./styles/GlobalStyles";
+import * as S from "./styles";
 
 function App() {
-	const [closeSidebar, setCloseSidebar] = useState(true)
-  
-  const handleCloseSidebar = ():void => {
-  	setCloseSidebar(!closeSidebar)
-  }
+  const [hideMenu, setHideMenu] = useState(true);
+
+  const hideSidebar = () => {
+    setHideMenu(!hideMenu);
+  };
+
   return (
-  	<BrowserRouter>
-    <div className="App">
-    	<GlobalStyles />
-      <Header 
-      	handleCloseSidebar={handleCloseSidebar}/>
-      <Sidebar 
-      	closeSidebar={closeSidebar}
-      	handleCloseSidebar={handleCloseSidebar}
-      	/>
-      <main>
-  			<Routers />
-  		</main>
-    </div>
+    <BrowserRouter>
+      <S.App>
+        <GlobalStyles />
+        <Sidebar showMenu={hideMenu} hideSidebar={hideSidebar} />
+        <div>
+          <Header handleShowMenu={hideSidebar} />
+          <Content />
+        </div>
+      </S.App>
     </BrowserRouter>
   );
 }
